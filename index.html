@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <link rel="stylesheet" href="./css/jquery.pagepiling.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+<style>
+    /* ---- reset ---- */
+
+    body {
+        margin: 0;
+        font: normal 75% Arial, Helvetica, sans-serif;
+    }
+
+    canvas {
+        display: block;
+        vertical-align: bottom;
+    }
+
+    /* ---- particles.js container ---- */
+
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        background-image: url("");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    #particles-js2 {
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        background-image: url("");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    /* ---- stats.js ---- */
+
+    .count-particles {
+        background: #000022;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 80px;
+        color: #13E8E9;
+        font-size: .8em;
+        text-align: left;
+        text-indent: 4px;
+        line-height: 14px;
+        padding-bottom: 2px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    .js-count-particles {
+        font-size: 1.1em;
+    }
+
+    #stats,
+    .count-particles {
+        -webkit-user-select: none;
+    }
+
+    #stats {
+        border-radius: 3px 3px 0 0;
+        overflow: hidden;
+    }
+
+    .count-particles {
+        border-radius: 0 0 3px 3px;
+    }
+
+    .rnd {
+        z-index: -1;
+        color: rgb(114, 114, 116);
+        font-size: 25px;
+        font-weight: 500;
+        margin: 100px;
+        position: absolute;
+        opacity: 0.43;
+    }
+
+    .showf {
+        opacity: 1;
+        transition: opacity 1000ms;
+    }
+
+    .hidef {
+        opacity: 0;
+        transition: opacity 1000ms;
+    }
+
+    .fadeRight {
+        color: #fff;
+        animation: fadeInRight 1s ease-in-out;
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(300px);
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fadeLeft {
+        color: #fff;
+        animation: fadeInLeft 1s ease-in-out;
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-300px);
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fadeUp {
+        color: #fff;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(300px);
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fadeDown {
+        color: #fff;
+        animation: fadeInDown 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-300px);
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div id="pagepiling">
+        <div style="height:100%;" class="section align-items-center position-absolute main-body">
+            <div id="tsparticles"></div>
+            <div class="container-fliud">
+                <div class="row">
+                    <div class="col-md-12">
+                        <section class="header">
+                            <nav class="nav-bar-header">
+                                <a class="navbar-brand " href="#"><img class="navbar-logo" src="./img/Group/Group.png"
+                                        alt=""></a>
+                                <a class="navrbar-mobile"><i class="fa-solid fa-bars-sort"></i></a>
+                                <p class="mobile-desc">Know all last updates</p>
+                                <div class="mobile-rectangle-96"></div>
+                                <div class="mobile-rectangle-95"></div>
+                                <ul class="icon-items-12">
+                                    <li>
+                                        <a class="c1" href="#"><i class=" c1 fa-brands fa-twitter"></i></a>
+                                    </li>
+                                    <li class="mr-2 ml-2">
+                                        <a class="a2" href="#"><i class=" a2 fa-brands fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="a3" href="#"><i class=" a3 fa-brands fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </section>
+                        <div class="rectangle-91"> </div>
+
+                        <section class="teaster">
+                            <div class="teaster-item"> </div>
+                            <div class="teaster-title">
+                                <h2 class="web-title">Be ready! </h2>
+                                <h2 class="mobile-title">NFT WORLD </h2>
+                                <p>Unique, fully 3D and built to unite the ape multiverse. Unique, fully 3D and built to
+                                    unite the ape multiverse. Unique, fully 3D and built to unite the ape multiverse.
+                                    Unique, fully</p>
+                            </div>
+                        </section>
+                        <div class="d-flex justify-content-space-between group-list">
+                            <div class="group-1"></div>
+                            <div class="group-3"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <span style="left: 1402.418px;top: 617.084px;" class="rnd"></span>
+                <span style="left: 1258.826px;top: 105.945px;" class="rnd"></span>
+                <span style="left: 123.463px;top: 304.233px;" class="rnd"></span>
+            </div>
+        </div>
+        <div style="height:100%;" class="section align-items-center position-absolute body-content-body">
+            <div id="tsparticles2"></div>
+            <div class="container-fluid about-us-fade main-bottom p-4 ">
+                <div class="row about-us-content">
+                    <div id="about-us-image" class="col-md-6 col-sm-12 marsimg hidef">
+                        <img class="mars" src="./img/image 3.svg" alt="moon">
+                    </div>
+                    <div class="col-md-6 col-sm-12 mt-4">
+                        <div class="row">
+                            <div id="about-us-header" class="col-12 hidef">
+                                <p class="about-us-header">About us</p>
+                            </div>
+                        </div>
+                        <div id="about-us-body" class="row hidef">
+                            <div class="col-12">
+                                <p class="about-us-info">
+                                    Unique, fully 3D and built to unite the ape multiverse. Unique, fully 3D and built
+                                    to unite the ape multiverse. Unique, fully 3D and built to unite the ape multiverse.
+                                    Unique, fullyUnique, fully
+                                </p>
+                                <p class="about-us-info" style="margin-top: 2%;">
+                                    Unique, fully <strong style="color:orange">3D and built</strong> to unite the ape
+                                    multiverse. Unique, fully 3D and built to unite the ape multiverse. Unique, fully
+                                    <strong class="text-primary" style="text-decoration: underline;">3D and built
+                                        to</strong> unite the ape multiverse. Unique, fullyUnique, fully
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <div class="about-us-x2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ">
+
+                        <div class="about-us-x1"></div>
+
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="content-group"></div>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <div class="col-md-3">
+                                <div class="group-4639"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <span style="left: 1402.418px;top: 617.084px;" class="rnd"></span>
+                <span style="left: 1258.826px;top: 105.945px;" class="rnd"></span>
+                <span style="left: 123.463px;top: 304.233px;" class="rnd"></span>
+            </div>
+        </div>
+        <div style="height:100%;" class="section align-items-center position-absolute manifasto-body">
+            <div id="tsparticles3"></div>
+            <div class="manifasto-item-1">
+                <h2 id="manifasto-title" class="manifasto-header mb-4 hidef">MANIFESTO</h2>
+                <p id="manifesto-text" class="manifasto-desc hidef">We believe that art can be anything. We believe that
+                    it can take different forms. Our belief is that everyone has creativity but doesn’t know how to
+                    express it yet. But once the quest is solved, anyone can claim to be an artist! And this is why we
+                    are immensely excited about the NFTs. This truly unique technology allows anyone to unleash its
+                    creativity and express it in any possible form.While learning about the technology and following the
+                    NFT community, we noted that most projects are mainly focused on PFPs, utilities are sometimes
+                    vague, and the value is predominantly created by increasing the floor price.</p>
+                <span style="left: 1402.418px;top: -265.916px;" class="rnd"></span>
+                <span style="left: 1275.826px;top: 325.945px;" class="rnd"></span>
+                <span style="left: 123.463px;top: -286.767px;" class="rnd"></span>
+            </div>
+            <!--  <div class="manifasto-item-ul">
+                  <ul class="manifasto-ul">
+                    <li>
+                        <a href=""><img src="./img/Rectangle 118.png" alt=""></a>
+                    </li>
+                    <li class="mr-3 ml-3">
+                        <a href=""><img src="./img/Rectangle 118.png" alt=""></a>
+    
+                    </li>
+                    <li>
+                        <a href=""><img src="./img/Rectangle 118.png" alt=""></a>
+    
+                    </li>
+                </ul> 
+            </div>-->
+        </div>
+        <div style="height:100%;" class="section align-items-center position-absolute team-content">
+            <div id="tsparticles4"></div>
+            <div class="container-fluid p-4">
+                <div id="team-title" class="row team-content-header justify-content-center hidef">
+                    <p>Meet Our Team</p>
+                    <div class="group-4649"></div>
+
+
+                </div>
+                <div id="team-head" class="row mt-5 pl-5 pr-5 mb-5 hidef">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-2 mb-5 ">
+                        <div class="member-card">
+                            <div class="member-card-head"><img src="./img/Team-memeber-01.png" class="img-fluid"
+                                    alt="Responsive image"></div>
+                            <div class="member-card-body justify-content-center">
+                                <p class="member-name">Melissa Becker</p>
+                                <p class="member-status">Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mr-4 ml-4 mb-5 ">
+                        <div class="member-card">
+                            <div class="member-card-head"><img src="./img/Team-memeber-01.png" class="img-fluid"
+                                    alt="Responsive image"></div>
+                            <div class="member-card-body justify-content-center">
+                                <p class="member-name">Melissa Becker</p>
+                                <p class="member-status">Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-5 ">
+                        <div class="member-card">
+                            <div class="member-card-head"><img src="./img/Team-memeber-01.png" class="img-fluid"
+                                    alt="Responsive image"></div>
+                            <div class="member-card-body justify-content-center">
+                                <p class="member-name">Melissa Becker</p>
+                                <p class="member-status">Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="know-us"></div>
+                    </div>
+                </div>
+
+                <div id="team-second" class="row justify-content-center  hidef" style="padding-bottom: 4rem;">
+                    <div class="col-md-1">
+                        <div class="rectangle-93"></div>
+
+                    </div>
+                    <div class="col-md-2">
+                        <div class="member-card-sm">
+                            <div class="member-card-sm-head"><img src="./img/Team-memeber-01.png" class="img-fluid"
+                                    alt="Responsive image"></div>
+                            <div class="member-card-sm-body justify-content-center">
+                                <p class="member-sm-name">Melissa Becker</p>
+                                <p class="member-sm-status">Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="member-card-sm">
+                            <div class="member-card-sm-head"><img src="./img/Team-memeber-01.png" class="img-fluid"
+                                    alt="Responsive image"></div>
+                            <div class="member-card-sm-body justify-content-center">
+                                <p class="member-sm-name">Melissa Becker</p>
+                                <p class="member-sm-status">Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="member-card-sm">
+                            <div class="member-card-sm-head"><img src="./img/Team-memeber-01.png" class="img-fluid"
+                                    alt="Responsive image"></div>
+                            <div class="member-card-sm-body justify-content-center">
+                                <p class="member-sm-name">Melissa Becker</p>
+                                <p class="member-sm-status">Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="member-card-sm">
+                            <div class="member-card-sm-head"><img src="./img/Team-memeber-01.png" class="img-fluid"
+                                    alt="Responsive image"></div>
+                            <div class="member-card-sm-body justify-content-center">
+                                <p class="member-sm-name">Melissa Becker</p>
+                                <p class="member-sm-status">Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="member-card-sm">
+                            <div class="member-card-sm-head"><img src="./img/Team-memeber-01.png" class="img-fluid"
+                                    alt="Responsive image"></div>
+                            <div class="member-card-sm-body justify-content-center">
+                                <p class="member-sm-name">Melissa Becker</p>
+                                <p class="member-sm-status">Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="rectangle-91"></div>
+
+                    </div>
+
+
+                </div>
+                <span style="left: 1402.418px;top: 617.084px;" class="rnd"></span>
+                <span style="left: 1258.826px;top: 105.945px;" class="rnd"></span>
+                <span style="left: 123.463px;top: 304.233px;" class="rnd"></span>
+            </div>
+        </div>
+        <div style="height:100%;" class="section  align-items-center position-absolute footer-body">
+            <div id="tsparticles5"></div>
+            <div class="footer-item">
+                <h2 id="foot-title" class="contact-title-footer hidef"> CURIOUS? GET IN TOUCH
+                </h2>
+                <P id="foot-body" class="contact-text-footer mt-5 hidef">CONTACT US contact@A2Z.COM
+
+                </P>
+                <span style="left: 1369.418px;top: 575.084px;" class="rnd"></span>
+                <span style="left: 1122.826px;top: 79.945px;" class="rnd"></span>
+                <span style="left: 141.463px;top: -27.767px;" class="rnd"></span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- <section class="contact-content">
+        <div class="container-fliud pt-5">
+            <div class="row">
+                <div class="col-md-5 contact-pa">
+                    <h2 class="contact-title"> CURIOUS? GET IN TOUCH
+                    </h2>
+                    <P class="contact-text mt-5">CONTACT US contact@A2Z.COM
+
+                    </P>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5 d-flex">
+                    <div class="rectangle-66"></div>
+                    <div class="rectangle-67"></div>
+                    <div class="rectangle-68"></div>
+                    <div class="rectangle-65"></div>
+                    <div class="rectangle-61"></div>
+                    <div class="rectangle-62"></div>
+                    <div class="rectangle-63"></div>
+                    <div class="rectangle-64"></div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </section> -->
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="./js/aos.js"></script>
+<!-- first include tsParticles engine -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+
+<!-- then include any tsParticles plugin needed -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles/tsparticles.bundle.min.js"></script>
+
+<!-- then include jquery wrapper -->
+<script src="https://cdn.jsdelivr.net/npm/jquery-particles"></script>
+<script src="./js/jquery.pagepiling.js"></script>
+<script>
+    function fadeIn(el) {
+        el.classList.add('showf');
+        el.classList.remove('hidef');
+    }
+
+    function fadeRight(el) {
+        el.classList.add('fadeRight');
+        el.classList.remove('hidef');
+    }
+
+    function fadeLeft(el) {
+        el.classList.add('fadeLeft');
+        el.classList.remove('hidef');
+    }
+
+
+    function fadeUp(el) {
+        el.classList.add('fadeUp');
+        el.classList.remove('hidef');
+    }
+
+    function fadeDown(el) {
+        el.classList.add('fadeDown');
+        el.classList.remove('hidef');
+    }
+
+    function fadeOut(el) {
+        el.classList.add('hidef');
+        el.classList.remove('showf');
+        el.classList.remove('fadeRight');
+        el.classList.remove('fadeLeft');
+        el.classList.remove('fadeUp');
+        el.classList.remove('fadeDown');
+
+    }
+
+    $(document).ready(function () {
+        $('#pagepiling').pagepiling({
+            menu: null,
+            direction: 'vertical',
+            verticalCentered: true,
+            sectionsColor: [],
+            anchors: [],
+            scrollingSpeed: 700,
+            easing: 'swing',
+            loopBottom: false,
+            loopTop: false,
+            css3: true,
+            navigation: {
+                'textColor': '#000',
+                'bulletsColor': '#000',
+                'position': 'right',
+                'tooltips': ['section1', 'section2', 'section3', 'section4']
+            },
+            normalScrollElements: null,
+            normalScrollElementTouchThreshold: 5,
+            touchSensitivity: 5,
+            keyboardScrolling: true,
+            sectionSelector: '.section',
+            animateAnchor: false,
+
+            //events
+            onLeave: function (index, nextIndex, direction) { 
+                if (index == 2) {
+                    var image=document.getElementById('about-us-image');
+                    var header=document.getElementById('about-us-header');
+                    var body=document.getElementById('about-us-body');
+                    fadeOut(header);
+                    fadeOut(image);
+                    fadeOut(body);
+                }
+                if (index == 3) {
+                    var title = document.getElementById('manifasto-title');
+                    var body = document.getElementById('manifesto-text');
+
+                    fadeOut(title);
+                    fadeOut(body);
+                }
+
+                if (index == 4) {
+                    var title = document.getElementById('team-title'),
+                        head = document.getElementById('team-head'),
+                        second = document.getElementById('team-second');
+                        fadeOut(title);
+                        fadeOut(head);
+                        fadeOut(second);
+                }
+                if (index == 5) {
+                    var title = document.getElementById('foot-title'),
+                        body = document.getElementById('foot-body');
+                        fadeOut(title);
+                        fadeOut(body);
+                }
+            },
+            afterLoad: function (anchorLink, index) {
+                //using index
+                if (index == 2) {
+                    var image=document.getElementById('about-us-image');
+                    var header=document.getElementById('about-us-header');
+                    var body=document.getElementById('about-us-body');
+                    fadeRight(header);
+                    fadeIn(image);
+                    fadeUp(body);
+                }
+                if (index == 3) {
+                    var title = document.getElementById('manifasto-title');
+                    var body = document.getElementById('manifesto-text');
+
+                    fadeDown(title);
+                    fadeIn(body);
+                }
+
+                if (index == 4) {
+                    var title = document.getElementById('team-title'),
+                        head = document.getElementById('team-head'),
+                        second = document.getElementById('team-second');
+                    fadeRight(title);
+                    fadeUp(head);
+                    setTimeout(function() {  fadeUp(second);}, 500);
+                }
+                if (index == 5) {
+                    var title = document.getElementById('foot-title'),
+                        body = document.getElementById('foot-body');
+                    fadeRight(title);
+                    fadeDown(body);
+                    const myTimeout = setTimeout(fadeIn(second), 50000);
+                }
+                //using anchorLink
+            },
+            afterRender: function () { },
+        });
+    });
+
+
+</script>
+
+<script>
+    $(document).ready(async function () {
+        await loadFull(tsParticles);
+        var tsJson={
+                "fullScreen": {
+                    "zIndex": 0
+                },
+                "interactivity": {
+                    "events": {
+                        "onClick": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onHover": {
+                            "enable": true,
+                            "mode": "bubble"
+                        }
+                    },
+                    "modes": {
+                        "bubble": {
+                            "distance": 250,
+                            "duration": 2,
+                            "opacity": 0,
+                            "size": 0,
+                            "divs": {
+                                "distance": 200,
+                                "duration": 0.4,
+                                "mix": false,
+                                "selectors": []
+                            }
+                        },
+                        "grab": {
+                            "distance": 400
+                        },
+                        "repulse": {
+                            "distance": 400,
+                            "divs": {
+                                "distance": 200,
+                                "duration": 0.4,
+                                "factor": 100,
+                                "speed": 1,
+                                "maxSpeed": 50,
+                                "easing": "ease-out-quad",
+                                "selectors": []
+                            }
+                        }
+                    }
+                },
+                "particles": {
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "links": {
+                        "color": {
+                            "value": "#ffffff"
+                        },
+                        "distance": 150,
+                        "opacity": 0.4
+                    },
+                    "move": {
+                        "attract": {
+                            "rotate": {
+                                "x": 600,
+                                "y": 600
+                            }
+                        },
+                        "center": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "enable": true,
+                        "path": {},
+                        "outModes": {
+                            "bottom": "out",
+                            "left": "out",
+                            "right": "out",
+                            "top": "out"
+                        },
+                        "random": true,
+                        "speed": 0,
+                        "spin": {}
+                    },
+                    "number": {
+                        "density": {
+                            "enable": true
+                        },
+                        "value": 20
+                    },
+                    "life": {
+                        "count": "",
+                        "duration": {
+                            "value": 100
+                        }
+                    },
+                    "opacity": {
+                        "random": {
+                            "enable": true
+                        },
+                        "value": {
+                            "min": 0,
+                            "max": 1
+                        },
+                        "animation": {
+                            "enable": true,
+                            "speed": 1,
+                            "minimumValue": 0
+                        }
+                    },
+                    "shape": {
+                        "type": "image",
+                        "image": {
+                            // any path or url to your image that will be used as a particle
+                            "src": "logo.png",
+                            // the pixel width of the image, you can use any value, the image will be scaled
+                            "width": 100,
+                            // the pixel height of the image, you can use any value, the image will be scaled
+                            "height": 100,
+                            // if true and the image type is SVG, it will replace all the colors with the particle color
+                            "replaceColor": false
+                        }
+                    },
+                    "size": {
+                        "random": {
+                            "enable": true
+                        },
+                        "value": {
+                            "min": 10,
+                            "max": 30
+                        },
+                        "animation": {
+                            "speed": 0,
+                            "minimumValue": 0.3
+                        }
+                    }
+                }
+            }
+        $("#tsparticles")
+            .particles()
+            .init(tsJson);
+
+        $("#tsparticles2")
+            .particles()
+            .init(tsJson);
+
+        $("#tsparticles3")
+            .particles()
+            .init(tsJson);
+
+        $("#tsparticles4")
+            .particles()
+            .init(tsJson);
+
+        $("#tsparticles5")
+            .particles()
+            .init(tsJson);
+    });
+
+    function randWithVariation(min, max, variation) {
+        var seed = (Math.floor(Math.random() * max) % (max - min)) + min; // attempts to keep the result within the bounds
+        var min = min, max = max, variation = variation;
+        var r = function () {
+            var offset = Math.floor(Math.random() * variation);
+            if (Math.random() < 0.5) offset *= -1; // chance that number will decrease
+            seed += offset;
+            if (seed < min) return max - seed; // also attempts to keep the result within the bounds
+            if (seed > max) return min + (seed - max);
+            else return seed;
+        }
+        return r;
+    }
+
+    // for (var i = 0; i < 3; i++) {
+    //     $('.section').append('<span style="z-index: -1;color: #727274;font-size: 25px;font-weight: 500; margin: 100px; position: absolute;" class="rnd"></span>');
+    // }
+    // $('.rnd').each(function (index) {
+    //     $(this).css({
+    //         left: Math.random() * ($('.section').width() - $(this).width()),
+    //         top: Math.random() * ($('.section').height() - $(this).height())
+    //     });
+    // });
+
+    var rand = randWithVariation(1000, 9999, 1000);
+    $('.rnd').append(rand());
+    setInterval(() => {
+        $('.rnd').empty();
+        $('.rnd').append(rand());
+    }, 50);
+</script>
+
+</html>

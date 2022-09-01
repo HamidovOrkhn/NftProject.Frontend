@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@font-face {
+    font-family: DIN Pro;
+    src: url('../fonts/DINPro-Bold_13934.ttf');
+}
+
+@font-face {
+    font-family: DIN Pro Light;
+    src: url('../fonts/FontsFree-Net-DINPro-1.ttf');
+}
+
+.navbar-logo {
+    height: 45.68011474609375px;
+    width: 221.08993530273438px;
+    border-radius: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    background-color: black !important;
+}
+
+.rect-94 {
+    position: absolute;
+    width: 209px;
+    height: 112px;
+    left: 101px;
+    top: 402px;
+    background: url('../img/Rectangle\ 94.png');
+    opacity: 0.8;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.rect-91 {
+    position: absolute;
+    width: 209px;
+    height: 111px;
+    left: 835px;
+    top: 177px;
+    background: url('../img/Rectangle\ 91.png');
+    opacity: 0.8;
+    transform: rotate(-180deg);
+}
+
+.rect-88 {
+    position: absolute;
+    width: 289px;
+    height: 223px;
+    left: 1200px;
+    top: 402px;
+    background: url('../img/Rectangle\ 88.png');
+    opacity: 0.8;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.vbox-rectangle {
+    background: url('../img/Group\ 4649.png');
+}
+
+.rect-1 {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: -17px;
+    top: 200px;
+    /* border: 2px solid #212121; */
+    box-sizing: border-box;
+}
+
+.rect-2 {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 120px;
+    /* border: 2px solid #212121; */
+    bottom: 0;
+}
+
+.rect-3 {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 81%;
+    top: 27%;
+    /* border: 2px solid #212121; */
+    box-sizing: border-box;
+}
+
+.metamillion {
+    /* margin-top: 5%; */
+    /* //position: absolute; */
+    width: 848px;
+    height: 478px;
+    left: 296px;
+    top: 107px;
+    background: url('../img/Metamillion_02\ 1.svg');
+}
+
+.notification-header {
+    font-family: DIN Pro;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 88px;
+    color: #FFFFFF;
+}
+
+.notification-body {
+    width: 48%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: DIN Pro Light;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.about-us-content {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.about-us-header {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 86px;
+    line-height: 50px;
+    color: white;
+    position: absolute;
+    bottom: 58px;
+}
+
+.about-us-content {
+    padding: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.about-us-info {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.mars {
+    width: 86%;
+    position: relative;
+    z-index: 99;
+}
+
+.team-content {
+    background-image: url('../img/Rectangle/Group\ 4650.png');
+    position: relative;
+    background-color: #0e0d0d;
+}
+
+.team-content-header {
+    font-family: Poppins;
+    margin-bottom: 5%;
+    font-style: normal;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 70px !important;
+    line-height: 125.5%;
+    position: relative;
+}
+
+.member-card-head img {
+    border-radius: 50%;
+    width: 178px;
+    height: 178px;
+    margin-bottom: 2%;
+}
+
+.member-card {
+    width: 100%;
+    text-align: center;
+}
+
+.member-name {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 45px;
+    color: #FFFFFF;
+}
+
+.member-status {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 10px;
+    color: #696969;
+}
+
+.member-card-sm-head img {
+    border-radius: 50%;
+    width: 104px;
+    height: 104px;
+    margin-bottom: 4%;
+}
+
+.member-card-sm {
+    width: 100%;
+    text-align: center;
+}
+
+.member-sm-name {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.member-sm-status {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 9px;
+    color: #696969;
+}
